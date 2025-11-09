@@ -36,7 +36,7 @@ public class Name {
         this.name = name;
     }
 
-    public void setSurname(String Surname) {
+    public void setSurname(String surname) {
         this.surname = surname;
     }
 
