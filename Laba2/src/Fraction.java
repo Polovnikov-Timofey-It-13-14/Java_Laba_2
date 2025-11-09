@@ -13,8 +13,8 @@ public class Fraction {
     }
 
     public Fraction(int number) {
-        this.numerator = number;
-        this.denominator = 1;
+     this.numerator = number;
+     this.denominator = 1;
     }
 
     //Геттеры
@@ -30,6 +30,10 @@ public class Fraction {
         int newNum = this.numerator * x.denominator + x.numerator * this.denominator;
         int newDen = this.denominator * x.denominator;
         return new Fraction(newNum, newDen);
+    }
+
+    public Fraction sum(int num) {
+        return sum(new Fraction(num));
     }
 
     public Fraction minus(Fraction x) {
@@ -48,6 +52,10 @@ public class Fraction {
         return new Fraction(newNum, newDen);
     }
 
+    public Fraction multiply(int num) {
+        return multiply(new Fraction(num));
+    }
+
     public Fraction divide(Fraction x) {
         if (x.denominator == 0) {
             System.out.println("Деление на 0");
@@ -56,6 +64,10 @@ public class Fraction {
         int newNum = this.numerator * x.denominator;
         int newDen = this.denominator * x.numerator;
         return new Fraction(newNum, newDen);
+    }
+
+    public Fraction divide(int num) {
+        return divide(new Fraction(num));
     }
 
     @Override
