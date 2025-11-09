@@ -17,6 +17,6 @@ public class HumanWithName {
 
     @Override
     public String toString() {
-        return name.toString() + " Рост: " + height;
+        return getName() + " Рост: " + height;
     }
 }
