@@ -14,7 +14,7 @@ public class City {
         this.name = name;
         this.ways = new HashMap<>(roads);
     }
-
+    
     public void addWays(City city, int way) {
         ways.put(city, way);
     }
