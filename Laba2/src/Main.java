@@ -11,17 +11,22 @@ public class Main {
         String number;
         while (true) {
             System.out.println("Введи номер задания(1-6):");
+            System.out.println("7 - Выход");
             number = scanner.nextLine();
 
-            if(!valid.isNumber(number)) {
+            if (!valid.isNumber(number)) {
                 System.out.println("Ошибка");
-            } else if (!number.equals("1") && !number.equals("2") && !number.equals("3") &&
-                    !number.equals("4") && !number.equals("5") && !number.equals("6")) {
-                System.out.println("Такого задания нет");
+                continue;
             }
 
-            switch(number) {
-                case "1":
+            int TaskNum = Integer.parseInt(number);
+            if (TaskNum < 1 || TaskNum > 7) {
+                System.out.println("Номер задания должен быть от 1 до 7");
+                continue;
+            }
+
+            switch (TaskNum) {
+                case 1:
                     System.out.println("Задание 1");
                     System.out.println("Люди по умолчанию в задании");
                     Human cleopatra = new Human("Клеопатра", 152);
@@ -30,31 +35,9 @@ public class Main {
                     System.out.println(cleopatra);
                     System.out.println(pushkin);
                     System.out.println(vladimir);
-
-                    /*System.out.println("Сколько людей ещё создать?");
-                    k = scanner.nextInt();
-                    scanner.nextLine();
-                    Human[] people = new Human[k];
-                    for (int i = 0; i < k; i++) {
-                        System.out.println(i + 1 + " Человек:");
-                        System.out.println("Введите имя: ");
-                        String name = scanner.nextLine();
-
-                        System.out.println("Введите рост: ");
-                        int height = scanner.nextInt();
-                        scanner.nextLine();
-
-                        people[i] = new Human(name, height);
-                    }
-
-                    System.out.println("Создано " + k + " людей:");
-                    for (int i = 0; i < people.length; i++)
-                        System.out.println((i + 1) + ") " + people[i]);
-
-                     */
                     break;
 
-                case "2":
+                case 2:
                     System.out.println("Задание 2");
                     System.out.println("Люди по умолчанию в задании");
                     Name name1 = new Name(null, "Клеопатра", null);
@@ -64,14 +47,9 @@ public class Main {
                     System.out.println(name2);
                     System.out.println(name3);
 
-                    /*System.out.println("Сколько людей ещё создать?");
-                    k = scanner.nextInt();
-                    for (int i = 0; i < k; i ++)
-                        System.out.println();
-                     */
                     break;
 
-                case "3":
+                case 3:
                     System.out.println("Задание 3");
                     Name name4 = new Name(null, "Клеопатра", null);
                     Name name5 = new Name("Пушкин", "Александр", "Сергеевич");
@@ -86,7 +64,7 @@ public class Main {
                     System.out.println(vladimir1);
                     break;
 
-                case "4":
+                case 4:
                     System.out.println("Задание 4");
                     City A = new City("A");
                     City B = new City("B");
@@ -122,7 +100,7 @@ public class Main {
                     System.out.println(F);
                     break;
 
-                case "5":
+                case 5:
                     System.out.println("5 Задание");
                     City number1 = new City("number1");
                     City number2 = new City("number2");
@@ -172,7 +150,7 @@ public class Main {
                     System.out.println(number6);
                     break;
 
-                case "6":
+                case 6:
                     System.out.println("Задание 6");
                     Fraction num1 = new Fraction(5, 2);
                     Fraction num2 = new Fraction(2, 5);
@@ -209,6 +187,10 @@ public class Main {
                     Fraction result = num1.sum(num2).divide(num3).minus(5);
                     System.out.println(result);
                     break;
+
+                case 7:
+                    System.out.println("Выход");
+                    System.exit(0);
             }
         }
     }
