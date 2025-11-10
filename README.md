@@ -126,20 +126,32 @@ F -> B:1, E:2
 Вывод:
 
 
-Города 3 и 5 созданы по требованиям задания
+Города 3 и 5 созданы по требованиям задания:
+
 number1
+
 number2
+
 number3 -> number2:3, number4:4
+
 number4
+
 number5 -> number6:2
+
 number6
 
 Полная карта:
+
 number1 -> number6:1, number2:5, number4:6
+
 number2 -> number3:3, number1:5
+
 number3 -> number2:3, number4:4
+
 number4 -> number6:2, number3:4, number1:6
+
 number5 -> number6:2
+
 number6 -> number5:2, number2:1
 ***
 5 Задание (Задача 5)
